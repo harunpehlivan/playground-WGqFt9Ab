@@ -3,10 +3,18 @@ SQL Server 2016 was (finally) released on June 1st, 2016 with an initial build n
 
 In this article, we will take a walk-through all fresh SQL 2016 features and cover them one by one.
 
-##Always Encrypted
+## Always Encrypted
 As the word suggests, 'Always Encrypted' feature of SQL 2016 'Always' keeps your sensitive data 'Encrypted' either at rest (local environment) or at remote (Cloud/Azure). It will help to protect data from people who may play around it like DBAs, Cloud operators, high-privileged but unauthorized users.
 
 **How It Works**
+
 You can set Always Encrypted to individual column (where your sensitive data resides). While configuring columns, you need to specify encryption algorithm and cryptographic keys for data protection. There are basically two keys you need to define:
-Encryption Key for column data encryption (It will be used to encrypt data for specific column)
-Master Key: for Encryption of column encryption keys
+1. Encryption Key for column data encryption (It will be used to encrypt data for specific column)
+2. Master Key: for Encryption of column encryption keys
+
+So basically, it's a double encryption protection, only program can access it, client application will automatically encrypt and decrypt data before fetching data from database.
+
+## JSON Support
+SQL 2016 gives direct support to JSON (Java Script Object Notation), SQL has the facility to read JSON format data, load them in table, support index properties in JSON columns.
+
+JSON data will be stored in *NVARCHAR* type. Due to *NVARCHAR* type, an application has the following benefits:
