@@ -30,3 +30,10 @@ It is a *SELECT* command so when we fire the above query, SQL will format each r
 This is again one of the security features of SQL 2016. As the name suggests, it just wraps MASK on your data, in short, it hides your confidential data that you don't want to display. It just avoids disclosure of your sensitive data.
 
 After masking, SQL User with limited rights will not view original text, he can view only Masked Text, SQL has pre-defined masking functions you just need to apply it on different columns, see below:
+
+| Sr No | Functions | Applied on | Plain text (Input) | Masking text(output) |
+| ------| --------- | ---------- | ------------------ | -------------------- |
+| 1 | Default | String | Number | ABCD | xxxx | 
+| 2 | Default | String | Number | ABCD | xxxx |
+| 3 | Default | String | Number | ABCD | xxxx |
+| 4 | Default | String | Number | ABCD | xxxx |
