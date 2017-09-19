@@ -1,1 +1,2 @@
 # techio-basic-template
+YES
