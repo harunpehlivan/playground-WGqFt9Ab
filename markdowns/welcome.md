@@ -18,3 +18,15 @@ So basically, it's a double encryption protection, only program can access it, c
 SQL 2016 gives direct support to JSON (Java Script Object Notation), SQL has the facility to read JSON format data, load them in table, support index properties in JSON columns.
 
 JSON data will be stored in *NVARCHAR* type. Due to *NVARCHAR* type, an application has the following benefits:
+You can easily fetch data FOR JSON from SQL with the below syntax:
+```sql
+SELECT column, expression, column as alias
+FROM table1, table2, table3
+FOR JSON [AUTO | PATH]
+```
+It is a *SELECT* command so when we fire the above query, SQL will format each row/cell value and return as JSON object. SQL has also provided in-built functions for JSON.
+
+## Dynamic Data Masking
+This is again one of the security features of SQL 2016. As the name suggests, it just wraps MASK on your data, in short, it hides your confidential data that you don't want to display. It just avoids disclosure of your sensitive data.
+
+After masking, SQL User with limited rights will not view original text, he can view only Masked Text, SQL has pre-defined masking functions you just need to apply it on different columns, see below:
